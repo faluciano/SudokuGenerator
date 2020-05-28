@@ -27,13 +27,13 @@ class Cube:
 
         if self.temp != 0 and self.value == 0:
             text = fnt.render(str(self.temp), 1, (128,128,128))
-            win.blit(text, (x+5, y+5))
+            win.blit(text, (int(x+5), int(y+5)))
         elif not(self.value == 0):
             text = fnt.render(str(self.value), 1, (0, 0, 0))
-            win.blit(text, (x + (gap/2 - text.get_width()/2), y + (gap/2 - text.get_height()/2)))
+            win.blit(text, (int(x + (gap/2 - text.get_width()/2)), int(y + (gap/2 - text.get_height()/2))))
 
         if self.selected:
-            pygame.draw.rect(win, (255,0,0), (x,y, gap ,gap), 3)
+            pygame.draw.rect(win, (255,0,0), (int(x),int(y), int(gap) ,int(gap)), 3)
 
     def set(self, val):
         self.value = val
@@ -88,8 +88,8 @@ class Grid:
                 thick = 4
             else:
                 thick = 1
-            pygame.draw.line(win, (0,0,0), (0, i*gap), (self.width, i*gap), thick)
-            pygame.draw.line(win, (0, 0, 0), (i * gap, 0), (i * gap, self.height), thick)
+            pygame.draw.line(win, (0,0,0), (0, int(i*gap)), (self.width, int(i*gap)), thick)
+            pygame.draw.line(win, (0, 0, 0), (int(i * gap), 0), (int(i * gap), self.height), thick)
 
         # Draw Cubes
         for i in range(self.rows):
