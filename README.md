@@ -2,6 +2,8 @@
 
 This project consists of a Sudoku solver, A sudoku board maker and an interface all made in python.
 
+![](Board.png)
+
 # Solver
 ## sudokuSolver.py
 

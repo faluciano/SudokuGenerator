@@ -1,11 +1,12 @@
 from numpy import array #Just for formating
+import time
 import sudokuBoard
 
 #Checks if the board is solved
 def solved(sudoku):
     for i in range(9):
         for j in range(9):
-            if sudoku[i][j] == 0:
+            if(sudoku[i][j]==0):
                 return False
     return True
 #Checks if a given move is a valid move
@@ -14,10 +15,12 @@ def checkValid(y,x,n,sudoku):
     for i in range(9):
         if sudoku[y][i] == n:
             return False
+
     #checks the row
     for i in range(9):
         if sudoku[i][x]==n:
             return False
+    
     #Gets first value of the square the number is in
     squarex = (x//3)*3
     squarey = (y//3)*3
@@ -53,4 +56,3 @@ if(__name__ == "__main__"):
     solve(sudoku)
     print("Solution")
     print(array(sudoku))
-    
